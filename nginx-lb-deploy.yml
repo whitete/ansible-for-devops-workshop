@@ -8,11 +8,10 @@
     pip:
       name: docker
 
-  tasks:
-    - name: launch nginx-lb container on lb nodes
-      docker_container:
-        name: nginx-lb
-        image: quay.io/whitete/ansible-for-devops-nginx-lb
-        ports:
-          - "8081:8081"
-        restart_policy: always
+  - name: launch nginx-lb container on lb nodes
+    docker_container:
+      name: nginx-lb
+      image: quay.io/whitete/ansible-for-devops-nginx-lb
+      ports:
+        - "8081:8081"
+      restart_policy: always
